@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrchidB2B</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .vl {
+            border-left: 1px solid rgb(29, 29, 29);
+            height: 35px;
+        }
+
+        .nav-link {
+            font-size: 16px !important;
+        }
+
+        .overlay-text {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent dark overlay */
+        }
+
+        .pageview {
+            background-color: white !important;
+            color: black !important;
+            border-radius: 25px !important;
+        }
+
+        .footer {
+            background-color: #efefef;
+            padding: 20px 0;
+        }
+
+        .footer-logo {
+            max-width: 150px;
+        }
+
+        .email-input {
+            border-radius: 10px;
+            border-right: none;
+            border: 3px solid #a0a0a0;
+        }
+
+        .email-btn {
+            border-radius: 10px;
+            border: 3px solid #a0a0a0;
+        }
+
+        .footer-links a {
+            color: #6c757d;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons i {
+            font-size: 24px;
+            margin: 0 5px;
+            color: #6c757d;
+        }
+
+        .social-icons i:hover {
+            color: #007bff;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            color: #6c757d;
+
+            padding-top: 10px;
+        }
+
+        .payment-icons img {
+            max-width: 50px;
+            margin: 0 5px;
+        }
+
+        .cbadge {
+            background-color: #6c757d;
+            border-radius: 5px;
+            border: 2px solid #565555;
+            color: #565555;
+        }
+
+        .btn-grey {
+            background-color: #565555;
+            color: white;
+            border-radius: 10px;
+            border: 3px solid #a0a0a0;
+        }
+
+        .footer-bottom {
+            background-color: #ffffff;
+            /* Light grey background */
+            padding: 10px 20px;
+            /* Add some padding */
+            border-top: 1px solid #e0e0e0;
+            /* Add a subtle border on top */
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            /* Adjust font size */
+            color: #6c757d;
+            /* Subtle grey color */
+        }
+
+        .payment-icons {
+            max-height: 30px;
+            /* Adjust the height of the icons */
+        }
+
+        .pqr {
+            background-image: url(./icon/location.png);
+            background-repeat: no-repeat;
+            background-position: 8px 8px;
+            background-size: 15px;
+        }
+
+        .xyz{
+            margin-top: 51px;
+        }
+
+
+        .form-control.form-select {
+            border: none;
+        }
+
+
+
+        .flight-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 500px;
+            padding: 8px 12px;
+            height: 40px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+        .airport-details {
+            display: flex;
+            align-items: center;
+        }
+        .airport-details i {
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+        .airport-details span {
+            margin-left: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+        .swap-icon {
+            font-size: 1.5rem;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .hvr2:hover{
+  border: 2px solid white;
+  border-radius: 25px;
+}
+    </style>
+</head>
+
+<body>
+    <!-- navbar strat -->
+    <div class="row w-100 g-0 bg-light">
+        <div class="col-md-11 mx-auto">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                            <div class="float-end d-flex align-items-center">
+                                <small class="me-2">
+                                    Welcome OrchidB2B
+                                </small>
+                                <div class="vl ms-2"></div>
+                                <a href=""><img src="./icon/Logout.png" alt="logo" class="logout-icon ms-2"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row w-100 g-0 bg-light">
+        <div class="col-md-11 mx-auto">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <img src="image/logo.png " alt="" width="180px"
+                        style="position: absolute; z-index:1; margin-bottom: 45px;">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="#"><small><img src="icon/mail.png"
+                                            class="pe-2" alt="" width="20px"><span style="font-size: 12px;">online@orchidncoming.com</span></small></a>
+                            </li>
+                            <div class="vl"></div>
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="#"><small><img src="icon/phone.png"
+                                            class="pe-2" alt="" width="20px"><span style="font-size: 12px;">South Asia +9170037
+                                        30174</span></small></a>
+                            </li>
+                            <div class="vl"></div>
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="#"><small><img src="icon/phone.png"
+                                            class="pe-2" alt="" width="20px"><span style="font-size: 12px;">ROW +97142451777</span></small></a>
+                            </li>
+                            <div class="vl"></div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"><small><img
+                                            src="icon/balance.png" class="pe-2" alt="" width="20px"><span style="font-size: 12px;">Available
+                                        Balance</span></small></a>
+
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <div class="vl"></div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"><small><img
+                                            src="icon/profile.png" class="pe-2" alt="" width="20px"><span style="font-size: 12px;">Account
+                                        Manager</span></small></a>
+
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <div class="vl"></div>
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="#"><small><img
+                                            src="icon/quotation.png" class="pe-2" alt=""
+                                            width="20px"><span style="font-size: 12px;">Quotation</span></small></a>
+                            </li>
+                            <div class="vl"></div>
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="#"><small><img
+                                            src="icon/booking.png" class="pe-2" alt="" width="25px"><span style="font-size: 12px;">My
+                                        Booking</span></small></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- hero section start -->
+    <div class="row w-100 g-0 mx-auto">
+        <div class="position-relative">
+            <div class="overlay"></div>
+            <!-- Background Image -->
+            <img src="image/background.jpg" alt="Background" class="img-fluid ">
+
+            <!-- Overlay Text -->
+            <div class="position-absolute w-75 top-50 start-50 translate-middle ">
+                <h1 class="overlay-text mb-5 text-center">Uncover Hidden Gems With Us</h1>
+                <ul class="nav  py-2" style="background-color: transparent;">
+                    <li class="nav-item pe-3 ms-3">
+                        <a class="nav-link active text-white d-flex align-items-center hvr2" aria-current="page" href="#">
+                            <i class="fa-solid fa-hotel me-2" style="font-size: 20px;"></i> Hotels
+                        </a>
+                    </li>
+                    <li class="nav-item pe-3 ms-3">
+                        <a class="nav-link text-white d-flex align-items-center hvr2" aria-current="page" href="#">
+                            <img src="./icon/packages.png" alt="Packages"
+                                style="width: 20px; height: 20px; margin-right: 5px;"> Packages
+                        </a>
+                    </li>
+                    <li class="nav-item pe-3 ms-3" style="background-color: white; border-radius: 25px;">
+                        <a class="nav-link text-dark d-flex align-items-center" aria-current="page" href="#">
+                            <img src="icon/flight.png" alt="Flight"
+                                style="width: 20px; height: 20px; margin-right: 5px;"> Flight
+                        </a>
+                    </li>
+                    <li class="nav-item pe-3 ms-3">
+                        <a class="nav-link text-white d-flex align-items-center hvr2" aria-current="page" href="#">
+                            <img src="./icon/sightseeing.png" alt="Sightseeing"
+                                style="width: 20px; height: 20px; margin-right: 5px;"> Sightseeing
+                        </a>
+                    </li>
+                    <li class="nav-item pe-3 ms-3">
+                        <a class="nav-link text-white d-flex align-items-center hvr2" aria-current="page" href="#">
+                            <img src="./icon/transfers.png" alt="Transfers"
+                                style="width: 20px; height: 20px; margin-right: 5px;"> Transfers
+                        </a>
+                    </li>
+                    <li class="nav-item pe-3 ms-3">
+                        <a class="nav-link text-white d-flex align-items-center hvr2" aria-current="page" href="#">
+                            <img src="./icon/umrah.png" alt="Umrah"
+                                style="width: 20px; height: 20px; margin-right: 5px;"> Umrah
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle text-white hvr2" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">More</a>
+                        <ul class="dropdown-menu" style="background-color: rgba(255, 255, 255, 1);">
+                            <li><a class=" dropdown-item text-dark d-flex align-items-center" aria-current="page"
+                                    href="#">
+                                    <img src="./icon/rail.png" alt="Packages"
+                                        style="width: 20px; height: 20px; margin-right: 5px;">
+                                    Rail
+                                </a></li>
+                            <li><a class=" dropdown-item text-dark d-flex align-items-center" aria-current="page"
+                                    href="#">
+                                    <img src="./icon/cruise.png" alt="Packages"
+                                        style="width: 20px; height: 20px; margin-right: 5px;">
+                                    Cruise
+                                </a></li>
+                            <li><a class=" dropdown-item text-dark d-flex align-items-center" aria-current="page"
+                                    href="#">
+                                    <img src="./icon/bus.png" alt="Packages"
+                                        style="width: 20px; height: 20px; margin-right: 5px;">
+                                    Bus
+                                </a></li>
+                            <li><a class=" dropdown-item text-dark d-flex align-items-center" aria-current="page"
+                                    href="#">
+                                    <img src="./icon/visa.png" alt="Packages"
+                                        style="width: 20px; height: 20px; margin-right: 5px;">
+                                    Visa
+                                </a></li>
+                            <li><a class=" dropdown-item text-dark d-flex align-items-center" aria-current="page"
+                                    href="#">
+                                    <img src="./icon/insurance.png" alt="Packages"
+                                        style="width: 20px; height: 20px; margin-right: 5px;">
+                                    Insurance
+                                </a></li>
+                            <li><a class=" dropdown-item text-dark d-flex align-items-center" aria-current="page"
+                                    href="#">
+                                    <img src="./icon/forex.png" alt="Packages"
+                                        style="width: 20px; height: 20px; margin-right: 5px;">
+                                    Forex
+                                </a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr class="mb-4" style="border: 1px solid rgb(255, 255, 255);">
+                <div class="row w-100 g-0">
+                    <div class="col-md-6">
+                        <input type="radio" name="oneway">
+                        <label for="oneway" class="text-white">One Way</label>
+
+                        <input type="radio" name="roundtrip" class="ms-5">
+                        <label for="roundtrip" class="text-white">Round Trip</label>
+
+                     
+                               <div class="mt-3">
+                                <input type="checkbox" id="Directflight" class="form-check-input">
+                                <label for="Directflight" class="form-check-label text-white">Direct Flight</label>
+                                
+                                <input type="checkbox" id="Refundable" class="form-check-input ms-4">
+                                <label for="Refundable" class="form-check-label text-white">Refundable</label>
+                               </div>
+                            
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="dropdown" style="float: right;">
+                            <button type="button" class="btn btn-outline-light dropdown-toggle"
+                                data-bs-toggle="dropdown"><i class="fa-solid fa-person"></i> Select Traveller
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">1 Traveller</a></li>
+                                <li><a class="dropdown-item" href="#">2 Traveller</a></li>
+                                <li><a class="dropdown-item" href="#">3 Traveller</a></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-light dropdown-toggle ms-3"
+                                data-bs-toggle="dropdown"><i class="fa-solid fa-couch"></i> Travel Class
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Economy</a></li>
+                                <li><a class="dropdown-item" href="#">Premium Economy</a></li>
+                                <li><a class="dropdown-item" href="#">Business</a></li>
+                                <li><a class="dropdown-item" href="#">First Class</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row w-100 g-0 mt-4">
+                    <div class="col-md-6">
+                        <label class="form-label text-white">From</label>
+                        <label class="form-label text-white" style="padding-left: 230px;">To</label>
+                        <div class="flight-box">
+                            <div class="airport-details col-md-5">
+                                <i class="bi bi-airplane"></i>
+                                <select class="form-control form-select" id="shipping-state">
+                                    <option value="Indira Gandhi International Airport (New Delhi, India) - DEL">
+                                        Indira Gandhi International Airport (New Delhi, India) - DEL</option>
+                                    <option
+                                        value="Chhatrapati Shivaji Maharaj International Airport (Mumbai, India) - BOM">
+                                        Chhatrapati Shivaji Maharaj International Airport (Mumbai, India) - BOM
+                                    </option>
+                                    <option value="Kempegowda International Airport (Bengaluru, India) - BLR">
+                                        Kempegowda International Airport (Bengaluru, India) - BLR</option>
+                                    <option value="Chennai International Airport (Chennai, India) - MAA">Chennai
+                                        International Airport (Chennai, India) - MAA</option>
+                                    <option
+                                        value="Netaji Subhas Chandra Bose International Airport (Kolkata, India) - CCU">
+                                        Netaji Subhas Chandra Bose International Airport (Kolkata, India) - CCU
+                                    </option>
+                                    <option value="Rajiv Gandhi International Airport (Hyderabad, India) - HYD">
+                                        Rajiv Gandhi International Airport (Hyderabad, India) - HYD</option>
+                                    <option value="Cochin International Airport (Kochi, India) - COK">Cochin
+                                        International Airport (Kochi, India) - COK</option>
+                                    <option value="Pune International Airport (Pune, India) - PNQ">Pune
+                                        International Airport (Pune, India) - PNQ</option>
+                                    <option
+                                        value="Sardar Vallabhbhai Patel International Airport (Ahmedabad, India) - AMD">
+                                        Sardar Vallabhbhai Patel International Airport (Ahmedabad, India) - AMD
+                                    </option>
+                                    <option value="Goa International Airport (Dabolim, Goa, India) - GOI">Goa
+                                        International Airport (Dabolim, Goa, India) - GOI</option>
+                                    <option value="Jaipur International Airport (Jaipur, India) - JAI">Jaipur
+                                        International Airport (Jaipur, India) - JAI</option>
+                                    <option
+                                        value="Trivandrum International Airport (Thiruvananthapuram, India) - TRV">
+                                        Trivandrum International Airport (Thiruvananthapuram, India) - TRV</option>
+                                    <option
+                                        value="Lokpriya Gopinath Bordoloi International Airport (Guwahati, India) - GAU">
+                                        Lokpriya Gopinath Bordoloi International Airport (Guwahati, India) - GAU
+                                    </option>
+                                    <option
+                                        value="Lal Bahadur Shastri International Airport (Varanasi, India) - VNS">
+                                        Lal Bahadur Shastri International Airport (Varanasi, India) - VNS</option>
+                                    <option
+                                        value="Sri Guru Ram Dass Jee International Airport (Amritsar, India) - ATQ">
+                                        Sri Guru Ram Dass Jee International Airport (Amritsar, India) - ATQ</option>
+                                </select>
+                            </div>
+                        
+                            <!-- Swap Icon -->
+                            <i class="swap-icon bi bi-arrow-left-right"></i>
+                        
+                            <!-- To Airport -->
+                            <div class="airport-details col-md-5">
+                                <i class="bi bi-airplane"></i>
+                                <select class="form-control form-select" id="shipping-state">
+                                    <option value="Indira Gandhi International Airport (New Delhi, India) - DEL">
+                                        Indira Gandhi International Airport (New Delhi, India) - DEL</option>
+                                    <option
+                                        value="Chhatrapati Shivaji Maharaj International Airport (Mumbai, India) - BOM">
+                                        Chhatrapati Shivaji Maharaj International Airport (Mumbai, India) - BOM
+                                    </option>
+                                    <option value="Kempegowda International Airport (Bengaluru, India) - BLR">
+                                        Kempegowda International Airport (Bengaluru, India) - BLR</option>
+                                    <option value="Chennai International Airport (Chennai, India) - MAA">Chennai
+                                        International Airport (Chennai, India) - MAA</option>
+                                    <option
+                                        value="Netaji Subhas Chandra Bose International Airport (Kolkata, India) - CCU">
+                                        Netaji Subhas Chandra Bose International Airport (Kolkata, India) - CCU
+                                    </option>
+                                    <option value="Rajiv Gandhi International Airport (Hyderabad, India) - HYD">
+                                        Rajiv Gandhi International Airport (Hyderabad, India) - HYD</option>
+                                    <option value="Cochin International Airport (Kochi, India) - COK">Cochin
+                                        International Airport (Kochi, India) - COK</option>
+                                    <option value="Pune International Airport (Pune, India) - PNQ">Pune
+                                        International Airport (Pune, India) - PNQ</option>
+                                    <option
+                                        value="Sardar Vallabhbhai Patel International Airport (Ahmedabad, India) - AMD">
+                                        Sardar Vallabhbhai Patel International Airport (Ahmedabad, India) - AMD
+                                    </option>
+                                    <option value="Goa International Airport (Dabolim, Goa, India) - GOI">Goa
+                                        International Airport (Dabolim, Goa, India) - GOI</option>
+                                    <option value="Jaipur International Airport (Jaipur, India) - JAI">Jaipur
+                                        International Airport (Jaipur, India) - JAI</option>
+                                    <option
+                                        value="Trivandrum International Airport (Thiruvananthapuram, India) - TRV">
+                                        Trivandrum International Airport (Thiruvananthapuram, India) - TRV</option>
+                                    <option
+                                        value="Lokpriya Gopinath Bordoloi International Airport (Guwahati, India) - GAU">
+                                        Lokpriya Gopinath Bordoloi International Airport (Guwahati, India) - GAU
+                                    </option>
+                                    <option
+                                        value="Lal Bahadur Shastri International Airport (Varanasi, India) - VNS">
+                                        Lal Bahadur Shastri International Airport (Varanasi, India) - VNS</option>
+                                    <option
+                                        value="Sri Guru Ram Dass Jee International Airport (Amritsar, India) - ATQ">
+                                        Sri Guru Ram Dass Jee International Airport (Amritsar, India) - ATQ</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 xyz">
+                        <div class="row w-100 g-5">
+                            <div class="col-md-6 my-auto">
+                                <div>
+                                    <label class="form-label text-white">Departure Date</label>
+                                    <input type="date" class="form-control" placeholder="Select Departure Date">
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-auto">
+                                <div>
+                                    <label class="form-label text-white">Return Date</label>
+                                    <input type="date" class="form-control" placeholder="Select Return Date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-3">
+                    <input type="checkbox" class="mt-4">
+                    <label for="Senior citizen fare" class="text-white">Senior citizen fare</label>
+
+                    <input type="checkbox" class="mt-4 ms-4">
+                    <label for="Student fare" class="text-white">Student fare</label>
+
+                    <input type="checkbox" class="mt-4 ms-4">
+                    <label for="Armed forces fare" class="text-white">Armed forces fare</label>
+
+                    <button class="btn ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample" style="background-color: #ff9c00;"
+                        onclick="toggleIcon(this)">
+                        ADVANCED SEARCH <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="collapse" id="collapseExample">
+                    <div class="row w-100 g-0">
+                        <div class="col-md-3 d-flex flex-column">
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="oman-air" class="form-check-input">
+                                <label for="oman-air" class="form-check-label text-white">Oman Air</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="air-india" class="form-check-input">
+                                <label for="Fly Dubai" class="form-check-label text-white">Fly Dubai</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="gulf-air" class="form-check-input">
+                                <label for="Swiss Air" class="form-check-label text-white">Swiss Air</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="qatar-airways" class="form-check-input">
+                                <label for="Ethiopian Airlines" class="form-check-label text-white">Ethiopian
+                                    Airlines</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column">
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="oman-air" class="form-check-input">
+                                <label for="Air India" class="form-check-label text-white">Air India</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="air-india" class="form-check-input">
+                                <label for="Emirates Airlines" class="form-check-label text-white">Emirates
+                                    Airlines</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="gulf-air" class="form-check-input">
+                                <label for="Srilankan Airlines" class="form-check-label text-white">Srilankan
+                                    Airlines</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="qatar-airways" class="form-check-input">
+                                <label for="Lufthansa" class="form-check-label text-white">Lufthansa</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column">
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="oman-air" class="form-check-input">
+                                <label for="Gulf Air" class="form-check-label text-white">Gulf Air</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="air-india" class="form-check-input">
+                                <label for="Etihad Airways" class="form-check-label text-white">Etihad Airways</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="gulf-air" class="form-check-input">
+                                <label for="Kuwait Airways" class="form-check-label text-white">Kuwait Airways</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="qatar-airways" class="form-check-input">
+                                <label for="KLM Royal Dutch Airlines" class="form-check-label text-white">KLM Royal
+                                    Dutch Airlines</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 d-flex flex-column">
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="oman-air" class="form-check-input">
+                                <label for="Qatar Airways" class="form-check-label text-white">Qatar Airways</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="air-india" class="form-check-input">
+                                <label for="British Airways" class="form-check-label text-white">British Airways</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="gulf-air" class="form-check-input">
+                                <label for="Srilankan Airlines" class="form-check-label text-white">Srilankan
+                                    Airlines</label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input type="checkbox" id="qatar-airways" class="form-check-input">
+                                <label for="Turkish Airlines" class="form-check-label text-white">Turkish
+                                    Airlines</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <div class="row w-100 g-5">
+                        <div class="col-md-6">
+                            <div class="mb-4 mb-lg-0">
+                                <label for="preferred airline" class="text-white">Preferred AirLine</label>
+                                <input type="text" class="form-control pqr" placeholder="     Enter Preferred AirLine">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn" style="background-color: #ff9c00;"><img src="./icon/Search.png"
+                            alt="Search">SEARCH</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer Section start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo Section -->
+                <div class="col-md-3 text-center text-md-start mt-4">
+                    <img src="../html template/image/logo.png" alt="Logo" class="footer-logo">
+
+                    <div class="col-lg-4 text-center text-lg-end">
+                        <div class="d-inline-flex align-items-center mt-2">
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2 bg-dark" href=""
+                                style="width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center;">
+                                <i class="fab fa-twitter fw-normal"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2 bg-dark" href=""
+                                style="width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center;">
+                                <i class="fab fa-facebook-f fw-normal"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2 bg-dark" href=""
+                                style="width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center;">
+                                <i class="fab fa-linkedin-in fw-normal"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2 bg-dark" href=""
+                                style="width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center;">
+                                <i class="fab fa-instagram fw-normal"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle bg-dark" href=""
+                                style="width: 30px; height: 30px; display: inline-flex; justify-content: center; align-items: center;">
+                                <i class="fab fa-youtube fw-normal"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Signup Section -->
+                <div class="col-md-6 mt-5">
+                    <h6 class="mb-2 ">Join our mailing list</h6>
+                    <div class="input-group">
+                        <input type="email" class="form-control email-input" placeholder="Enter Your Email Id">
+                        <button class="btn btn-grey email-btn">Go</button>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 text-center footer-links ">
+                            <span class="badge bg-light text-dark cbadge">Cards Refunds</span>
+                            <span class="badge bg-light text-dark cbadge">Disclaimer</span>
+                            <span class="badge bg-light text-dark cbadge">Privacy Policy</span>
+                            <span class="badge bg-light text-dark cbadge">General Terms Conditions</span>
+                            <span class="badge bg-light text-dark cbadge">FAQ's</span>
+                            <span class="badge bg-light text-dark cbadge">Bank Details</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 text-center text-md-end">
+                    <h6 class="mb-2">For More Information</h6>
+                    <button class="btn btn-grey me-5 ps-3 pe-3 px-5 " style="width: 190px;margin-left: 30px; ">Write To
+                        Us</button>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <div class="col-11 w-100 g-0 mx-auto ">
+        <div class="col-11 footer-bottom d-flex justify-content-between align-items-center mx-auto ">
+            <p class="m-0">&copy; 2025 Orchid DMC Pvt Ltd. All Rights Reserved.</p>
+            <img src="icon/card.png" alt="Payment Icons" class="payment-icons">
+        </div>
+    </div>
+    <!-- Footer Section end-->
+
+
+
+
+
+
+
+
+    <script>
+        function toggleIcon(button) {
+            const icon = button.querySelector('i');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            // Toggle the icon based on aria-expanded
+            if (isExpanded) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+
+</html>
